@@ -1,0 +1,166 @@
+h1. Rails 3.2 Application Templates
+
+These application generator templates give you a Rails 3.2 starter app you can deploy in minutes.
+
+h4. Applications
+
+The templates can be used to build the following complete applications:
+
+* "Rails 3  + Devise + RSpec + Cucumber + Postgresql + Subdomains"
+
+h4. Tutorials
+
+h4. Options
+
+The application generator templates will ask you for various preferences:
+
+* Would you like to use "Haml":http://en.wikipedia.org/wiki/Haml instead of ERB?
+* Would you like to use "RSpec":http://rspec.info/ instead of TestUnit?
+* Would you like to use "factory_girl":https://github.com/thoughtbot/factory_girl for test fixtures with RSpec?
+* Would you like to use "machinist":https://github.com/notahat/machinist for test fixtures with RSpec?
+* Would you like to use "Cucumber":http://cukes.info/ for your BDD?
+* Would you like to use "Guard":http://intridea.com/posts/hire-a-guard-for-your-project to automate your workflow?
+* Would you like the app to use a GMail account to send email?
+* Would you like to use "Mongoid":http://mongoid.org/ to connect to a "MongoDB":http://www.mongodb.org/ database?
+* Would you like to use "OmniAuth":https://github.com/intridea/omniauth for authentication?
+* Would you like to use "Devise":http://github.com/plataformatec/devise for authentication?
+## No
+## Devise with default modules
+## Devise with Confirmable module
+## Devise with Confirmable and Invitable modules
+* Which front-end framework would you like for HTML5 and CSS3?
+## None
+## "Zurb Foundation":http://foundation.zurb.com/
+## "Twitter Bootstrap - less":http://twitter.github.com/bootstrap/
+## "Twitter Bootstrap - sass":http://twitter.github.com/bootstrap/
+## "Skeleton":http://www.getskeleton.com/
+## Normalize CSS for consistent styling
+* Would you like to use "rails-footnotes":https://github.com/josevalim/rails-footnotes during development?
+* Would you like to set a robots.txt file to ban spiders?
+* Would you like to add support for subdomains?
+## No
+## One subdomain per user (like Basecamp)
+
+h2. !http://twitter-badges.s3.amazonaws.com/t_logo-a.png(Follow on Twitter)!:http://www.twitter.com/rails_apps Follow on Twitter
+
+Follow the project on Twitter: "@rails_apps":http://twitter.com/rails_apps. Please tweet some praise if you like what you've found.
+
+h2. Suggested Use
+
+You can quickly generate a Rails web application using just the @rails new@ command. In practice, experienced Rails developers typically add an assortment of useful additional packages (known as RubyGems, or just "gems") before beginning development of any web application. A developer often uses the same set of gems to get started and may create a "starter app" that can be copied and reused for any new project. Often a developer will create an "application template" to automate the creation of starter apps.
+
+Rails application templates are Ruby scripts used with the @"rails new myapp -m"@ command to generate a Rails web application.
+
+Application templates commonly integrate popular gems that many Rails developers include in a starter app. It can be a hassle to integrate some of the most commonly used gems, particularly when new versions are released and there are minor "gotchas" that interfere with gems working together. By using these  application templates, you'll have a ready-to-run app without the integration "gotchas". Each has a detailed tutorial so you'll see exactly how the application was assembled.
+
+These application templates were created using the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem which provides a convenient way to assemble a reusable application template by selecting various "recipes" for popular Rails development gems.
+
+You can use the application templates from this repository to generate a starter app directly. You can edit the templates to customize the script to generate a customized starter app. Or you can use the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem to assemble a selection of recipes for a customized starter app.
+
+h2. Dependencies
+
+Before generating your application, you will need:
+
+* The Ruby language (version 1.9.3)
+* Rails 3.2
+
+See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html for detailed instructions and advice.
+
+h2. Generating the Application
+
+Use the @"rails new myapp -m"@ command to generate a Rails web application.
+
+This creates a new Rails app (with the @myapp@ name you provide) on your computer.
+
+You can add the @-T -O@ flags to skip Test::Unit files and Active Record files.
+
+h4. Template for Rails 3 + Devise + RSpec + Cucumber
+
+To build the "rails3-devise-rspec-cucumber" example application, run the command:
+
+<pre>
+$ rails new myapp -m https://raw.github.com/prakashsejwani/rails_start_up_template/master/rails3-devise-rspec-cucumber-subdomains-postgresql-template.rb -T
+</pre>
+
+Use the @-T@ flag to skip Test::Unit files.
+
+
+h2. Troubleshooting
+
+Problems? Check the "issues":https://github.com/RailsApps/rails3-application-templates/issues.
+
+h4. Problems with Rake
+
+If you see:
+
+<pre>
+The template ... could not be loaded.
+Error: You have already activated rake 0.8.7, but your Gemfile requires rake 0.9.x.
+Consider using bundle exec.
+</pre>
+
+If you are using Ruby 1.9.2, you must update the standard Ruby installation from Rake 0.8.7 to Rake 0.9.2 (or "newer":http://rubygems.org/gems/rake) before using the application templates to generate a new Rails app. It's advisable to update to Ruby 1.9.3 which will provide Rake 0.9.2. See "Installing Rails 3.2":http://railsapps.github.com/installing-rails.html.
+
+h4. Problems with  "Certificate Verify Failed"
+
+Are you getting an error "OpenSSL certificate verify failed" when you try to generate a new Rails app from an application template? See suggestions to resolve the error "Certificate Verify Failed":http://railsapps.github.com/openssl-certificate-verify-failed.html.
+
+h2. Documentation and Support
+
+This is the only documentation.
+
+h4. The Recipes
+
+For your reference, here's an annotated list of available "recipes for the Rails Apps Composer gem":http://railsapps.github.com/rails-apps-recipes.html. For an up-to-date list, browse the repository "recipes directory":https://github.com/RailsApps/rails_apps_composer/tree/master/recipes.
+
+h4. Customizing the Template
+
+If you wish to "change the recipe" to generate the app with your own customized options, you can copy and edit the template file. However, it is better to use the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem to create a new application template. You'll find newer versions of the recipes that make up the application template. You may find issues have been identified and (perhaps) fixed. And it will be easier to maintain your application template if you work from the "Rails Apps Composer":https://github.com/RailsApps/rails_apps_composer gem.
+
+h4. Writing Recipes
+
+To understand the code in these templates, take a look at "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions. Your recipes can use any methods provided by "Thor::Actions":http://rdoc.info/github/wycats/thor/master/Thor/Actions or "Rails::Generators::Actions":http://railsapi.com/doc/rails-v3.0.3/classes/Rails/Generators/Actions.html.
+
+h4. About Rails Application Templates
+
+"Cooking Up A Custom Rails 3 Template (11 Oct 2010) by Andrea Singh":http://blog.madebydna.com/all/code/2010/10/11/cooking-up-a-custom-rails3-template.html
+"Rails Application Templates (16 Sept 2010) by Collin Schaafsma":http://quickleft.com/blog/rails-application-templates
+"Application templates in Rails 3 (18 Sept 2009) by Ben Scofield":http://benscofield.com/2009/09/application-templates-in-rails-3/
+"Railscasts: App Templates in Rails 2.3 (9 Feb 2009) by Ryan Bates":http://railscasts.com/episodes/148-app-templates-in-rails-2-3
+"Rails templates (4 Dec 2008) by Pratik Naik":http://m.onkey.org/rails-templates
+
+h4. Similar Projects
+
+There are many similar projects. Here's an annotated list of other "Rails application template projects":http://railsapps.github.com/rails-application-templates.html and "Rails examples, tutorials, and starter apps":http://railsapps.github.com/rails-examples-tutorials.html.
+
+h4. Issues
+
+Any issues? Please create an "issue":https://github.com/RailsApps/rails3-application-templates/issues on GitHub.
+
+h4. Where to Get Help
+
+Your best source for help with problems is "Stack Overflow":http://stackoverflow.com/questions/tagged/ruby-on-rails-3. Your issue may have been encountered and addressed by others.
+
+You can also try "Rails Hotline":http://www.railshotline.com/, a free telephone hotline for Rails help staffed by volunteers.
+
+h2. Contributing
+
+If you make improvements to this application, please share with others.
+
+Send the author a message, create an "issue":https://github.com/RailsApps/rails3-application-templates/issues, or fork the project and submit a pull request.
+
+If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
+
+h2. Credits
+
+Daniel Kehoe ("http://danielkehoe.com/":http://danielkehoe.com/) created these templates.
+
+Are the templates useful to you? Follow the project on Twitter:
+"@rails_apps":http://twitter.com/rails_apps
+and tweet some praise. I'd love to know you were helped out by what I've put together.
+
+h2. License
+
+h4. Public Domain Dedication
+
+This work is a compilation and derivation from other previously released works. With the exception of various included works, which may be restricted by other licenses, the author or authors of this code dedicate any and all copyright interest in this code to the public domain. We make this dedication for the benefit of the public at large and to the detriment of our heirs and successors. We intend this dedication to be an overt act of relinquishment in perpetuity of all present and future rights to this code under copyright law.
